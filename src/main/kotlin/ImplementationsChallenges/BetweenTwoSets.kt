@@ -1,43 +1,20 @@
 package ImplementationsChallenges
 
 class BetweenTwoSets() {
-
     fun find(listA: List<Int>, listB: List<Int>): Int {
-        val startLoop = listA.last()
-        val endLoop = listB.first()
+        val startLoop = listA.max()!!
+        val endLoop = listB.min()!!
 
-        if (endLoop - startLoop < 1) {
-            return 0
-        }
+        val results = (startLoop..endLoop).filter({ x ->
+            listA.all { x % it == 0 } && listB.all { it % x == 0 }
+        })
 
-        val factorA = arrayListOf<Int>()
-        loopA@ for (i in startLoop..endLoop) {
-            for (x in listA) {
-                val mod = i % x
-                if (mod > 0) {
-                    continue@loopA
-                }
-            }
-            factorA.add(i)
-        }
-
-        val factorB = arrayListOf<Int>()
-        loopB@ for (factorA in factorA) {
-            for (y in listB) {
-                val modB = y % factorA
-                if (modB > 0) {
-                    continue@loopB
-                }
-            }
-            factorB.add(factorA)
-        }
-
-        return factorB.size
+        return results.count()
     }
 }
 
 fun main(args: Array<String>) {
-    val (numListA, numListB) = readLine()!!.split(" ").map(String::toInt)
+    readLine()!!.split(" ").map(String::toInt)
     val listA = readLine()!!.split(" ").map(String::toInt)
     val listB = readLine()!!.split(" ").map(String::toInt)
     val betweenToSets = BetweenTwoSets()
