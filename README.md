@@ -5,3 +5,4 @@ Repository ini berisi solusi dari soal-soal algoritma di www.hackerrank.com di t
 Berikut soal-soal yang sudah di selesaikan:
 1. [Grading Students](https://www.hackerrank.com/challenges/grading/problem)
 2. [Apple and Orange](https://www.hackerrank.com/challenges/apple-and-orange/problem)
+3. [Kangaroo](https://www.hackerrank.com/challenges/kangaroo/problem)
